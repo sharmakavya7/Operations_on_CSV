@@ -39,7 +39,7 @@ f2 = fs.statSync('./authors.json');
 f3 = fs.statSync('./magazines.json');
 if(f1.size != 0 && f2.size != 0 && f3.size != 0 )
 {
-    abheet();
+    functionalities();
 }
 else
 {
@@ -49,8 +49,8 @@ else
 }
 
 
-// abheet();
-function abheet()
+// functionalities();
+function functionalities()
 {
 const book = require('./books.json')
 const magazine = require('./magazines.json')
@@ -104,3 +104,6 @@ console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
 // authors.json -> csv -> authors.csv
 // magazene or book
 }
+
+// 1st index.js -> csv to json convert
+// 2nd index.js -> other functionalities will work
