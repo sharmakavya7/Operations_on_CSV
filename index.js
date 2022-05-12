@@ -114,7 +114,26 @@ fs.writeFile('books.json',JSON.stringify(book), function(){console.log('data add
 
 // json to csv
 //console.log(book);
+var array = typeof book != 'object' ? JSON.parse(book) : book;
+console.log(array[0]);
+var str = '';
 
- 
+for (var i = 0; i < array.length; i++) {
+    var line = '';
+    for (var index in array[i]) {
+        if (line != '') line += ','
+
+        line += array[i][index];
+    }
+
+    str += line + '\r\n';
+}
+
+console.log(str);
+fs.writeFile('books.csv', '', function(){console.log('JSON converted to CSV again')})
+//console.log(book);
+fs.writeFile('books.csv',str, function(){console.log('Done')})
+//console.log("Doneee");
+
 
 }
