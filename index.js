@@ -39,7 +39,7 @@ f2 = fs.statSync('./authors.json');
 f3 = fs.statSync('./magazines.json');
 if(f1.size != 0 && f2.size != 0 && f3.size != 0 )
 {
-    functionalities();
+    functionality();
 }
 else
 {
@@ -49,8 +49,8 @@ else
 }
 
 
-// functionalities();
-function functionalities()
+// functionality();
+function functionality()
 {
 const book = require('./books.json')
 const magazine = require('./magazines.json')
@@ -100,10 +100,21 @@ console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
 
 // add data to json and then csv
 
-// json object - > write authors.json
-// authors.json -> csv -> authors.csv
-// magazene or book
-}
+var obj = {
+    title: 'Bird Box',
+    isbn: '1215-1545-5775',
+    authors: 'kavyasharma@gmail.com',
+    description: 'abc'  }; 
+book.push(obj);
 
-// 1st index.js -> csv to json convert
-// 2nd index.js -> other functionalities will work
+fs.writeFile('books.json', '', function(){console.log('data added to json')})
+//console.log(book);
+fs.writeFile('books.json',JSON.stringify(book), function(){console.log('data added to json')})
+
+
+// json to csv
+//console.log(book);
+
+ 
+
+}
